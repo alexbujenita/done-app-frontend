@@ -8,21 +8,23 @@
     <title>Done App</title>
   </head>
   <body>
-    <div id="root">
 
-        <table style="width: 500px; border: 3px;">
+    <input type="button" value="Create a new task" onclick="showHideForm()">
+
+    <div id="root">
+        <table class="task-card">
             <tbody>
-              <tr style="background-color:darkgray">
-                <td>TASK</td>
+              <tr>
+                <td class="task-header">TASK</td>
               </tr>
-            <tr style="height: 100px;">
-            <td style="height: 350px; background-color: darkolivegreen">This Task</td>
+            <tr>
+            <td class="task-content" colspan="4">Buy some Milk</td>
             </tr>
-            <tr style="height: 31px;">
-            <td style="width: 200px; height: 31px; background-color: darkorange">TEST</td>
-            <td style="width: 50px; height: 31px; background-color: red"></td>
-            <td style="width: 50px; height: 31px;border:solid; display: none "></td>
-            <td style="width: 50px; height: 31px;border:solid"></td>
+            <tr>
+            <td>14th May 19</td>
+            <td class="task-indicator1"></td>
+            <td class="task-indicator2"></td>
+            <td class="task-indicator3" style="background-color:red;"></td>
             </tr>
             </tbody>
             </table>
