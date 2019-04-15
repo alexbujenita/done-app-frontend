@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Done App</title>
-</head>
-<body>
-  <div id="root"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="src/style.css">
+    <title>Done App</title>
+  </head>
+  <body>
+    <div id="root">
 
-  <script src="src/index.js"></script>
-</body>
+        <table style="width: 500px; border: 3px;">
+            <tbody>
+              <tr style="background-color:darkgray">
+                <td>TASK</td>
+              </tr>
+            <tr style="height: 100px;">
+            <td style="height: 350px; background-color: darkolivegreen">This Task</td>
+            </tr>
+            <tr style="height: 31px;">
+            <td style="width: 200px; height: 31px; background-color: darkorange">TEST</td>
+            <td style="width: 50px; height: 31px; background-color: red"></td>
+            <td style="width: 50px; height: 31px;border:solid; display: none "></td>
+            <td style="width: 50px; height: 31px;border:solid"></td>
+            </tr>
+            </tbody>
+            </table>
+    </div>
+
+    <script src="src/api.js"></script>
+    <script src="src/form.js"></script>
+    <script src="src/index.js"></script>
+  </body>
 </html>
