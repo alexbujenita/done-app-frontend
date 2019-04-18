@@ -1,22 +1,27 @@
-class ServerApi {
+const USERS_URL = "http://localhost:3000/users";
+const TASKS_URL = "http://localhost:3000/tasks";
 
-  static Base_url = 'http://localhost:3000/users';
+const getUsers = _ => fetch(USERS_URL).then(resp => resp.json());
 
-  static getUserData(userId){
-      return this.get(this.Base_url + '/' + userId);
-  }
+const createTask = task => {
+  return fetch(TASKS_URL, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(task)
+  }).then(resp => resp.json());
+};
 
-  static get(url) {
-    return fetch(url).then(resp => resp.json());
-  }
+const updateCompletion = task => {
+  return fetch(TASKS_URL + "/complete/" + task.id, {
+    method: "PATCH"
+  }).then(resp => resp.json());
+};
 
-  static getUsers() {
-    return fetch(this.Base_url).then(resp => resp.json())
-  }
-
-
-}
-
-
-
-
+const deleteTask = id => {
+  return fetch(TASKS_URL + "/" + id, {
+    method: "DELETE"
+  }).then(resp => resp.json());
+};
