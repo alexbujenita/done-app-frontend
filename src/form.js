@@ -24,11 +24,11 @@ const createForm = () => {
     createTask(newTask).then(task => {
       appendCreatedTask(task)
       DIXIE.play() // SOUND
+      FORM.reset();
+      FORM_CONTAINER.className = "hidden-form";
+      clicked = !clicked;
     });
 
-    FORM.reset();
-    FORM_CONTAINER.className = "hidden-form";
-    clicked = !clicked;
   });
 
   const TASK_CONTENT_LABEL = document.createElement("label");

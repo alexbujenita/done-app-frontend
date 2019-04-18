@@ -14,6 +14,11 @@ main {
   /* animation: text-flicker-in-glow 4s linear both; */
 }
 
+.search-bar {
+  padding: 8px;
+  border-radius: 3px;
+}
+
 .form-add {
   padding: 0 1rem;
 }

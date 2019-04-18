@@ -10,6 +10,8 @@ let show = true
 const appendCreatedTask = task => {
   const SELECTED_VALUE = document.getElementById('user-selector')
   const userOption = SELECTED_VALUE.options[SELECTED_VALUE.selectedIndex].innerText
+  console.log(userOption);
+  
   const CONTAINER = document.createElement("div");
     CONTAINER.id = `task-${task.id}`;
     CONTAINER.className = "card-container";
@@ -65,6 +67,7 @@ const appendCreatedTask = task => {
     // ------------------------------------------------------------- \\
 
     const USER = document.createElement("p");
+    USER.className = 'assigned-user'
     USER.textContent = `Assigned to ${userOption}`
 
     const DUE_DATE = document.createElement('p')
@@ -84,19 +87,7 @@ const appendCreatedTask = task => {
 function renderTask(user) {
   user.tasks.sort((task1, task2) => task1.id-task2.id)
   user.tasks.forEach(task => {
-    // HYBRID ------------------------------------------------------
-    // const CONTAINER = document.createElement("div");
-    // CONTAINER.id = `task-${task.id}`;
-    // CONTAINER.className = "card-container";
-    // const { id, name, content, end_date, priority } = task
-    // const cardHtml = `
-    //   <p id="task-content">${content}</p>
-    //   <p>Assigned to: ${user.name}</p>
-    //   <p> Due by: ${end_date.split('T')[0]}</p>
-    // `
-    // CONTAINER.innerHTML = cardHtml
 
-    // ------------------------------------------------------------- \\
     const CONTAINER = document.createElement("div");
     CONTAINER.id = `task-${task.id}`;
     CONTAINER.className = "card-container";
@@ -153,6 +144,7 @@ function renderTask(user) {
     // ------------------------------------------------------------- \\
 
     const USER = document.createElement("p");
+    USER.className = 'assigned-user'
     USER.textContent = `Assigned to ${user.name}`
 
     const DUE_DATE = document.createElement('p')
